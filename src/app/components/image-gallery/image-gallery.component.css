@@ -104,13 +104,22 @@
 }
 
 #photos section .like:hover {
-    transform: rotate(-15deg);
+    /* transform: rotate(-15deg); */
     transition: 0.3s ease;
     font-size: 33px;
 }
 
-#photos section .download:hover {
+#photos section .like:active {
     transform: rotate(15deg);
+    transition: 0s ease;
+}
+
+#photos section .unlike:active {
+    transform: rotate(-15deg);
+    transition: 0s ease;
+}
+
+#photos section .download:hover {
     transition: 0.3s ease;
     font-size: 33px;
 }

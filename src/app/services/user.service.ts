@@ -7,17 +7,12 @@ export class UserService {
     private user: UserEntity = null;
 
     constructor () {
-        const images = new Array<string>();
-        images.push('portfolio/nacira-1');
-        images.push('portfolio/nacira-3');
-        images.push('portfolio/nacira-4');
-
         this.user = new UserEntity();
         this.user.firstName = 'Edel';
         this.user.lastName = 'Benavides';
         this.user.email = 'eb@gmail.com';
         this.user.username = 'eb';
-        this.user.images = images;
+        this.user.images = new Array<string>();
     }
 
     /**
