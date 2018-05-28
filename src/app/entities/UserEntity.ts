@@ -6,4 +6,7 @@ export class UserEntity {
     lastName: string;
     email: string;
     username: string;
+
+    // Array containing image IDs
+    images: Array<string>;
 }
