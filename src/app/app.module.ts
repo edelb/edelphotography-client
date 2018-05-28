@@ -18,6 +18,8 @@ import { MontagesComponent } from './components/montages/montages.component';
 import { RestorationsComponent } from './components/restorations/restorations.component';
 import { ImageService } from './services/image.service';
 import { PortfolioViewComponent } from './components/portfolio-view/portfolio-view.component';
+import { UserService } from './services/user.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,8 @@ import { PortfolioViewComponent } from './components/portfolio-view/portfolio-vi
   ],
   providers: [
     FlickrService,
-    ImageService
+    ImageService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

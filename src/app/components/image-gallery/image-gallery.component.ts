@@ -18,6 +18,7 @@ export class ImageGalleryComponent implements OnInit {
   constructor(private imageService: ImageService) { }
 
   ngOnInit() {
+    // this.disableContextMenu();
     if (this.portfolio) {
       this.subscribeHome();
     }

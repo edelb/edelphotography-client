@@ -1,7 +1,7 @@
 <div id="photos" *ngIf="images" class="container-fluid">
-  <section *ngFor="let image of portfolio.images">
+  <section *ngFor="let image of portfolio.images" onContextMenu="return false;" (click)="disableContextMenu()">
     <a [href]="image.url" [attr.data-fancybox]="image.gallery" [attr.data-caption]="image.name">
-      <img [src]="image.url" (click)="disableContextMenu()" onContextMenu="return false;"/>
+      <img [src]="image.url"/>
       <div class="overlay"></div>
       <div class="icon-overlay"></div>
     </a>
