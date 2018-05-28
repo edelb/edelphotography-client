@@ -75,11 +75,11 @@
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    line-height: 60px;
+    line-height: 55px;
     border: 2px solid rgba(255, 255, 255, 0);
-    -webkit-box-shadow: 0px 0px 15px 1.5px rgba(255,255,255,0.15);
-    -moz-box-shadow: 0px 0px 15px 1.5px rgba(255,255,255,0.15);
-    box-shadow: 0px 0px 15px 1.5px rgba(255,255,255,0.15);
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(255,255,255,0.2);
+    -moz-box-shadow: 0px 0px 15px 3px rgba(255,255,255,0.2);
+    box-shadow: 0px 0px 15px 3px rgba(255,255,255,0.2);
 }
 
 #photos section .icon {
@@ -105,8 +105,14 @@
     transition: 0.3s ease;
 }
 
-#photos section .icon:hover {
+#photos section .like:hover {
     transform: rotate(-15deg);
+    transition: 0.3s ease;
+    font-size: 33px;
+}
+
+#photos section .download:hover {
+    transform: rotate(15deg);
     transition: 0.3s ease;
     font-size: 33px;
 }
@@ -121,11 +127,11 @@
 }
 
 #photos section:hover .icon:hover {
-    color: rgb(0, 180, 162);
+    color: rgb(0, 168, 180);
     border: 2px solid rgba(0,0,0,0);
-    -webkit-box-shadow: 0px 0px 15px 1.5px rgba(255,255,255,0.25);
-    -moz-box-shadow: 0px 0px 15px 1.5px rgba(255,255,255,0.25);
-    box-shadow: 0px 0px 15px 1.5px rgba(255,255,255,0.25);
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(255,255,255,0.3);
+    -moz-box-shadow: 0px 0px 15px 3px rgba(255,255,255,0.3);
+    box-shadow: 0px 0px 15px 3px rgba(255,255,255,0.3);
 }
 
 @media (max-width: 1200px) {
@@ -156,7 +162,7 @@
     #photos section .icon-border {
         width: 45px;
         height: 45px;
-        line-height: 45px;
+        line-height: 40px;
     }
 
     #photos section .icon {
@@ -176,7 +182,7 @@
     #photos section .icon-border {
         width: 30px;
         height: 30px;
-        line-height: 28px;
+        line-height: 25px;
     }
 
     #photos section .icon {
