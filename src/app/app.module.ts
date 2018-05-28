@@ -35,7 +35,7 @@ import { UserService } from './services/user.service';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { useHash: true }),
     FormsModule,
     HttpClientModule
   ],
