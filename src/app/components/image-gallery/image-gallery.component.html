@@ -6,6 +6,7 @@
       <div class="icon-overlay"></div>
     </a>
     <div class="icon-border icon like" [ngClass]="{'liked': liked(image.id), 'unlike': liked(image.id)}" (click)="like(image.id)"><i class="fa fa-thumbs-up"></i></div>
-    <a [href]="image.url" download><div class="icon-border icon download"><i class="fa fa-download"></i></div></a>
+    <a><div class="icon-border icon download"><i class="fa fa-download"></i></div></a>
+    <!-- <a [href]="image.url" download><div class="icon-border icon download"><i class="fa fa-download"></i></div></a> -->
   </section>
 </div>
