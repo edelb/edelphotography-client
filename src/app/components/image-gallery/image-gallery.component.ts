@@ -11,7 +11,6 @@ import { PortfolioEntity } from '../../entities/PortfolioEntity';
 })
 export class ImageGalleryComponent implements OnInit {
 
-  // private images$: Observable<Array<ImageEntity>>;
   private images: Array<ImageEntity>;
 
   @Input() private portfolio: PortfolioEntity;
@@ -20,7 +19,7 @@ export class ImageGalleryComponent implements OnInit {
 
   ngOnInit() {
     if (this.portfolio) {
-      this.subscribeHome(this.portfolio);
+      this.subscribeHome();
     }
   }
 
@@ -40,9 +39,9 @@ export class ImageGalleryComponent implements OnInit {
    * Subscribes to observable and display images based on given path.
    * @param path Directory where images are stored
    */
-  private subscribeHome(portfolio: PortfolioEntity) {
+  private subscribeHome() {
     // Load images initially
-    this.images = this.imageService.loadImagesFromAssets(portfolio.path, portfolio.files);
+    this.images = this.portfolio.images;
 
     // If server is Active, load images from server.
     // this.images$ = this.imageService.loadImagesFromServer(path);

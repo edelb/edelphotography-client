@@ -38,7 +38,14 @@ export class PortfolioComponent implements OnInit {
   private pictureClick(num: number) {
     for (let i = 1; i <= this.portfolios.length; i++) {
       if (num === i) {
+
+        // Set portfolio data
         this.portfolio = this.imageService.getPortfolios()[i - 1];
+
+        // Set portfolio array of images
+        this.portfolio.images = this.imageService.loadImagesFromAssets(this.portfolio.path, this.portfolio.files);
+
+        // Set current portfolio and navigate to view component
         this.imageService.setPortfolio(this.portfolio);
         this.router.navigateByUrl(`portfolio/view`);
       }

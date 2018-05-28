@@ -88,6 +88,7 @@ export class ImageService {
     for (let i = 0; i < numberOfFiles; i++) {
       const image = new ImageEntity();
       image.gallery = path;
+      image.id = `${image.gallery}${0}`;
       image.name = `Photo ${i + 1}`;
       image.size = 0;
       image.url = `../../../assets/${path}/${i + 1}.jpg`;
