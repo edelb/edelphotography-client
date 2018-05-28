@@ -1,0 +1,27 @@
+<div class="container-fluid" align="center">
+    <div id="home" *ngIf="!previous">
+        <section onContextMenu="return false;" (click)="pictureClick(1)">
+            <img src="../../../assets/portfolio/nacira/4.jpg">
+            <div class="title">Nacira and Rolando</div>
+            <div class="overlay">
+                <div class="text">Engagement</div>
+            </div>
+        </section>
+        
+        <section onContextMenu="return false;" (click)="pictureClick(2)">
+            <img src="../../../assets/portfolio/lory/2.jpg">
+            <div class="title">Lorianne</div>
+            <div class="overlay">
+                <div class="text">Beach Day</div>
+            </div>
+        </section>
+        
+        <section onContextMenu="return false;" (click)="pictureClick(3)">
+            <img src="../../../assets/portfolio/wendy/4.jpg" >
+            <div class="title">Wendy and Yiovanni</div>
+            <div class="overlay">
+                <div class="text">Engagement</div>
+            </div>
+        </section>
+    </div>
+</div>

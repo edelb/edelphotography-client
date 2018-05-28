@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    color: rgb(216, 216, 216);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    background: url("/assets/backgrounds/clouds.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    /* padding-top: 65px; */
+}
+
+::-webkit-input-placeholder
+{
+	color:rgba(255,255,255,0.5);
+}
+
+/* highlight selection */
+::selection 
+{
+	/*background-color:rgba(159, 223, 159, 0.6);*/ /*light green*/
+	background-color: #28daa1;
+	color: white;
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 400px) {
+
+}
+
+/* Add Zoom Animation */
+.animate {
+	-webkit-animation: animatezoom 0.6s;
+	animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+	from {-webkit-transform: scale(0)} 
+	to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+	from {transform: scale(0)} 
+	to {transform: scale(1)}
+}

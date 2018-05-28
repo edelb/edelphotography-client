@@ -1,0 +1,11 @@
+<div id="photos" *ngIf="images" class="container-fluid">
+  <section *ngFor="let image of images">
+    <a [href]="image.url" [attr.data-fancybox]="image.gallery" [attr.data-caption]="image.name">
+      <img [src]="image.url" (click)="disableContextMenu()" onContextMenu="return false;"/>
+      <div class="overlay"></div>
+    </a>
+    <div class="icon-overlay"></div>
+    <div class="icon-border icon like"><i class="fa fa-thumbs-up"></i></div>
+    <a [href]="image.url" download><div class="icon-border icon download"><i class="fa fa-download"></i></div></a>
+  </section>
+</div>

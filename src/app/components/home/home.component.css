@@ -1,0 +1,127 @@
+/* https://miketricking.github.io/bootstrap-image-hover/ */
+#home section {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+    max-width: 1000px;
+    max-height: 500px;
+    margin-bottom: 30px;
+    /* object-fit: cover; */
+    /* text-align: center; */
+    /* object-position: 15% 50%; */
+}
+
+#home section .overlay {
+    position: absolute;
+    border-radius: 5px;
+    height: 80%;
+    width: 85%;
+    top: 10%;
+    left: 7%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-image: -webkit-linear-gradient(-30deg, rgba(255, 255, 255, 0.25) 40%, rgba(0, 0, 0, 0) 40%);
+    -webkit-box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.5);
+}
+
+#home section .text {
+    position: absolute;
+    font-size: 25px;
+    width: 100%;
+    padding: 20px;
+    top: 38%;
+    background: rgba(0,0,0,0.5);
+    border-bottom: 3px solid white;
+    opacity: 0;
+    transition: 0.5s ease;
+    -webkit-box-shadow: 0px 10px 19px -4px rgba(0,0,0,0.45);
+    -moz-box-shadow: 0px 10px 19px -4px rgba(0,0,0,0.45);
+    box-shadow: 0px 10px 19px -4px rgba(0,0,0,0.45);
+}
+
+#home section .title {
+    position: absolute;
+    font-size: 25px;
+    width: 100%;
+    padding: 20px;
+    bottom: 15%;
+    background: rgba(0,0,0,0.5);
+    border-bottom: 3px solid white;
+    opacity: 1;
+    transition: 0.5s ease;
+    -webkit-box-shadow: 0px 10px 19px -4px rgba(0,0,0,0.45);
+    -moz-box-shadow: 0px 10px 19px -4px rgba(0,0,0,0.45);
+    box-shadow: 0px 10px 19px -4px rgba(0,0,0,0.45);
+}
+
+#home section img {
+    width: 100%;
+    transition: 0.5s ease;
+}
+
+#home section:hover img {
+    transform: scale(1.1);
+    filter: brightness(75%) blur(4px) grayscale(0);
+}
+
+#home section:hover .text {
+    opacity: 1;
+}
+
+#home section:hover .overlay {
+    opacity: 1;
+}
+
+#home section:hover .title {
+    opacity: 0;
+}
+
+#home section:hover .text:hover {
+    border-bottom: 3px solid #28daa1;
+    -webkit-box-shadow: 0px 10px 23px -3px rgba(0,0,0,0.50);
+    -moz-box-shadow: 0px 10px 23px -3px rgba(0,0,0,0.50);
+    box-shadow: 0px 10px 23px -3px rgba(0,0,0,0.50);
+    /* transition: 0.1s ease; */
+}
+
+@media (max-width: 1000px) {
+    #home section .text {
+        font-size: 23px;
+        padding: 17px;
+    }
+
+    #home section .title {
+        font-size: 23px;
+        padding: 9px;
+    }
+}
+
+@media (max-width: 800px) {
+    #home section .text {
+        font-size: 20px;
+        border-bottom: 2px solid white;
+        padding: 14px;
+    }
+
+    #home section .title {
+        font-size: 20px;
+        border-bottom: 2px solid white;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 400px) {
+    #home section .text {
+        font-size: 16px;
+        padding: 6px;
+    }
+
+    #home section .title {
+        font-size: 17px;
+        padding: 3px;
+    }
+}

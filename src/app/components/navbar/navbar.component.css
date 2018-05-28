@@ -1,0 +1,44 @@
+a {
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    transition: 0.3s;
+    color: white;
+}
+
+a:hover {
+    border-bottom: 2px solid rgba(209, 209, 209, 1);
+    transition-timing-function: ease-in;
+    
+}
+
+.active {
+    border-bottom: 2px solid #28daa1;
+    transition-timing-function: ease-in;
+}
+
+.icon {
+    width: 60px;
+}
+
+.icon a {
+    border-bottom: 0;
+}
+
+.icon a:hover {
+    border-bottom: 0;
+}
+
+.icon img {
+    width: 100%;
+}
+
+.navbar-nav {
+    padding-left: 20px;
+}
+
+@media only screen and (max-width: 576px) {
+    .navbar-nav {
+        padding-left: 0px;
+    }
+}

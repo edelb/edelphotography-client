@@ -1,0 +1,15 @@
+<div class="container-fluid" align="center" *ngIf="portfolio">
+    <!-- Arrows -->
+    <div class="arrow-container" (click)="goBack()">
+        <div class="tool-tip previous-tooltip">Back</div>
+        <div class="arrow arrow-left">
+            <i class="fa fa-arrow-left"></i>
+        </div>
+    </div>
+
+    <div id="portfolio-wrapper">
+        <h3>{{ portfolio.title }}</h3>
+        <h4>{{ portfolio.event }}</h4>
+        <app-image-gallery [portfolio]="portfolio"></app-image-gallery>
+    </div>
+</div>

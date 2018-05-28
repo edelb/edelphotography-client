@@ -1,0 +1,43 @@
+/* https://codepen.io/cbracco/pen/zekgx */
+.footerrr {
+    /* margin-top: 30px; */
+    /* position: fixed; */
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    font-size: 14px;
+    color: rgb(216, 216, 216);
+    text-align: center;
+    /* background-color: rgba(56, 56, 56, 0.856); */
+}
+
+a {
+    color: rgba(0, 230, 180, 0.836);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 230, 180, 0);
+}
+
+a:hover {
+    border-bottom: 1px solid rgba(0, 230, 180, 0.836);
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    color: white;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .footer {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .footer {
+        font-size: 15px;
+    }
+}

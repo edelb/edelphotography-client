@@ -1,0 +1,82 @@
+.arrow-container {
+    cursor: pointer;
+}
+
+.arrow {
+    position: fixed;
+    opacity: 0.5;
+    top: 50%;
+    font-size: 65px;
+    color: white;
+}
+
+.arrow-right {
+    right: 1%;
+    z-index: 1;
+}
+
+.arrow-left {
+    left: 1%;
+    z-index: 1; 
+}
+
+.arrow:hover {
+    opacity: 0.90;
+}
+
+.tool-tip {
+    position: fixed;
+    top: 47%;
+    font-size: 20px;
+    z-index: 1;
+    background: rgba(0,0,0, 0.7);
+    padding: 1px 5px 1px 5px;
+    border-radius: 5px;
+    display: none;
+}
+
+.previous-tooltip {
+    left: 0.5%;
+}
+
+.arrow-container:hover .shuffle-tooltip {
+    display: block;
+}
+
+.arrow-container:hover .previous-tooltip {
+    display: block;
+}
+
+#portfolio-wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+    #portfolio-wrapper {
+        max-width: 95%;
+        margin: 0 auto
+    }
+    
+    .arrow {
+        font-size: 55px
+    }
+}
+
+@media (max-width: 768px) {
+    .arrow {
+        font-size: 40px
+    }
+}
+
+@media (max-width: 500px) {
+    .arrow {
+        font-size: 35px
+    }
+}
+
+@media (max-width: 400px) {
+    .arrow {
+        font-size: 27px
+    }
+}
