@@ -10,6 +10,6 @@ export class PortfolioEntity {
     event: string;
     path: string;
     files: number;
-    photos: Array<ImageEntity>;
+    images: Array<ImageEntity>;
     text: string;
 }

@@ -1,11 +1,12 @@
 <div id="photos" *ngIf="images" class="container-fluid">
-  <section *ngFor="let image of images">
+  <section *ngFor="let image of portfolio.images" onContextMenu="return false;" (click)="disableContextMenu()">
     <a [href]="image.url" [attr.data-fancybox]="image.gallery" [attr.data-caption]="image.name">
-      <img [src]="image.url" (click)="disableContextMenu()" onContextMenu="return false;"/>
+      <img [src]="image.url"/>
       <div class="overlay"></div>
+      <div class="icon-overlay"></div>
     </a>
-    <div class="icon-overlay"></div>
-    <div class="icon-border icon like"><i class="fa fa-thumbs-up"></i></div>
-    <a [href]="image.url" download><div class="icon-border icon download"><i class="fa fa-download"></i></div></a>
+    <div class="icon-border icon like" [ngClass]="{'liked': liked(image.id), 'unlike': liked(image.id)}" (click)="like(image.id)"><i class="fa fa-thumbs-up"></i></div>
+    <a><div class="icon-border icon download"><i class="fa fa-download"></i></div></a>
+    <!-- <a [href]="image.url" download><div class="icon-border icon download"><i class="fa fa-download"></i></div></a> -->
   </section>
 </div>
