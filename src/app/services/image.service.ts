@@ -68,6 +68,18 @@ export class ImageService {
   }
 
   /**
+   * Disables context menu on fancybox lightbox images.
+   */
+  public disableContextMenu() {
+    setTimeout( () => {
+      const fancybox = document.getElementsByClassName('fancybox-container');
+      for (let i = 0; i < fancybox.length; i++) {
+        fancybox[i].setAttribute('onContextMenu', 'return false');
+      }
+    }, 100 );
+  }
+
+  /**
    * Returns an Observable of ImageEntity Array based on a given path.
    * @param path Path of images to retrieve (i.e. portfolio-day1)
    */

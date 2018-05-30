@@ -31,12 +31,7 @@ export class ImageGalleryComponent implements OnInit {
    * Disables context menu on fancybox lightbox images.
    */
   private disableContextMenu() {
-    setTimeout( () => {
-      const fancybox = document.getElementsByClassName('fancybox-container');
-      for (let i = 0; i < fancybox.length; i++) {
-        fancybox[i].setAttribute('onContextMenu', 'return false');
-      }
-    }, 100 );
+    this.imageService.disableContextMenu();
   }
 
   /**
