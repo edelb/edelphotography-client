@@ -31,7 +31,7 @@ export class ImageGalleryComponent implements OnInit {
    * Disables context menu on fancybox lightbox images.
    */
   private disableContextMenu() {
-    this.imageService.disableContextMenu();
+    this.imageService.disableContextMenu('fancybox-container');
   }
 
   /**

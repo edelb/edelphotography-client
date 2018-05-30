@@ -69,10 +69,11 @@ export class ImageService {
 
   /**
    * Disables context menu on fancybox lightbox images.
+   * @param name Class name or identifier
    */
-  public disableContextMenu() {
+  public disableContextMenu(name) {
     setTimeout( () => {
-      const fancybox = document.getElementsByClassName('fancybox-container');
+      const fancybox = document.getElementsByClassName(name);
       for (let i = 0; i < fancybox.length; i++) {
         fancybox[i].setAttribute('onContextMenu', 'return false');
       }
