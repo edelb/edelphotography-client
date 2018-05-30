@@ -1,9 +1,9 @@
-<section id="photos" *ngIf="images" class="container-fluid">
-  <span *ngFor="let image of images">
-    <!-- <i class="fa fa-thumbs-up"></i> -->
-    <a [href]="image.url" [attr.data-fancybox]="image.gallery" [attr.data-caption]="image.name">
-      <img [src]="image.url" (click)="disableContextMenu()" onContextMenu="return false;"/>
-    </a>
-  </span>
-</section>
-  
+<div id="home" *ngIf="images" class="container-fluid">
+  <div align="center">
+    <section *ngFor="let image of images">
+      <a [href]="image.url" [attr.data-fancybox]="image.gallery" [attr.data-caption]="image.name">
+        <img [src]="image.url" (click)="disableContextMenu()" onContextMenu="return false;"/>
+      </a>
+    </section>
+  </div>
+</div>
