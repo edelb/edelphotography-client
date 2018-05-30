@@ -6,3 +6,22 @@
 #home section {
      margin-bottom: 15px;
  }
+
+ #home section .overlay {
+    position: absolute;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-image: -webkit-linear-gradient(-30deg, rgba(255, 255, 255, 0.35) 30%, rgba(0, 0, 0, 0) 30%);
+    -webkit-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.35);
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.35);
+}
+
+#home section:hover .overlay {
+    opacity: 1;
+}

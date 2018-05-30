@@ -3,6 +3,7 @@
     <section *ngFor="let image of images">
       <a [href]="image.url" [attr.data-fancybox]="image.gallery" [attr.data-caption]="image.name">
         <img [src]="image.url" (click)="disableContextMenu()" onContextMenu="return false;"/>
+        <div class="overlay"></div>
       </a>
     </section>
   </div>
