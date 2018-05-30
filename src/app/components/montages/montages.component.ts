@@ -11,13 +11,13 @@ export class MontagesComponent implements OnInit {
 
   private images: Array<ImageEntity>;
   private path = 'montages';
-  private numberOfFiles = 8;
+  private files = 8;
 
   constructor(private imageService: ImageService) { }
 
   ngOnInit() {
     this.imageService.scrollTop();
-    this.images = this.imageService.loadImagesFromAssets(this.path, this.numberOfFiles);
+    this.images = this.imageService.loadImagesFromAssets(this.path, this.files);
   }
 
   private disableContextMenu() {

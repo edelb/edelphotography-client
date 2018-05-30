@@ -91,14 +91,14 @@ export class ImageService {
   /**
    * Returns an array of ImageEntity based on the given path and number of files.
    * @param path Portfolio path
-   * @param numberOfFiles Number of photos in that path
+   * @param files Number of photos in that path
    */
-  public loadImagesFromAssets(path: string, numberOfFiles: number): Array<ImageEntity> {
+  public loadImagesFromAssets(path: string, files: number): Array<ImageEntity> {
     const images = new Array<ImageEntity>();
 
     path = path.replace(new RegExp('-', 'g'), '/');
 
-    for (let i = 0; i < numberOfFiles; i++) {
+    for (let i = 0; i < files; i++) {
       const image = new ImageEntity();
       image.gallery = path;
       image.id = `${image.gallery}-${i + 1}`;
