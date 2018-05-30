@@ -1,4 +1,5 @@
 <div id="home" *ngIf="images" class="container-fluid">
+  <h3 class="heading">Montages</h3>
   <div align="center">
     <section *ngFor="let image of images">
       <a [href]="image.url" [attr.data-fancybox]="image.gallery" [attr.data-caption]="image.name">

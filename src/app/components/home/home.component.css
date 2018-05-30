@@ -1,4 +1,9 @@
 /* https://miketricking.github.io/bootstrap-image-hover/ */
+
+#home {
+    text-align: center;
+}
+
 #home section {
     position: relative;
     overflow: hidden;
@@ -8,7 +13,10 @@
     max-width: 1000px;
     max-height: 500px;
     margin-bottom: 30px;
+    margin: 0 auto;
+    text-align: center;
 }
+
 
 #home section .overlay {
     position: absolute;

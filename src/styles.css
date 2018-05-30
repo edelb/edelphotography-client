@@ -10,6 +10,11 @@ body {
     background-size: cover;
 }
 
+.heading {
+	margin-bottom: 15px;
+	text-align: center;
+}
+
 ::-webkit-input-placeholder
 {
 	color:rgba(255,255,255,0.5);

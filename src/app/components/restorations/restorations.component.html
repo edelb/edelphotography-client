@@ -1,3 +1,42 @@
-<p>
-  restorations works!
-</p>
+<div class="container-fluid" *ngIf="images">
+
+  <h3 class="heading">Restorations</h3>
+
+  <div id="photos">
+    <div *ngFor="let image of images; let i = index;">
+
+      <section *ngIf="(i+1) <= 8" (click)="disableContextMenu()" onContextMenu="return false;">
+        <a [href]="image.url" [attr.data-fancybox]="image.gallery" [attr.data-caption]="image.name">
+          <img [src]="image.url"/>
+          <div class="overlay"></div>
+        </a>
+      </section>
+
+    </div>
+
+    <div></div>
+    
+    <section (click)="disableContextMenu()" onContextMenu="return false;">
+      <a [href]="images[8].url" [attr.data-fancybox]="images[8].gallery" [attr.data-caption]="images[8].name">
+        <img [src]="images[8].url"/>
+        <div class="overlay"></div>
+      </a>
+    </section>
+    
+    <section (click)="disableContextMenu()" onContextMenu="return false;">
+      <a [href]="images[9].url" [attr.data-fancybox]="images[9].gallery" [attr.data-caption]="images[9].name">
+        <img [src]="images[9].url"/>
+        <div class="overlay"></div>
+      </a>
+    </section>
+
+    <section class="bottom-picture" (click)="disableContextMenu()" onContextMenu="return false;">
+      <a [href]="images[10].url" [attr.data-fancybox]="images[10].gallery" [attr.data-caption]="images[10].name">
+        <img [src]="images[10].url"/>
+        <div class="overlay"></div>
+      </a>
+    </section>
+    
+  </div>
+
+</div>
