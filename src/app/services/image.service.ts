@@ -35,7 +35,7 @@ export class ImageService {
     this.portfolios.push(nacira);
 
     const lory = new PortfolioEntity();
-    lory.id = 2; lory.path = 'portfolio-lory'; lory.files = 8;
+    lory.id = 2; lory.path = 'portfolio-lory'; lory.files = 12;
     lory.title = 'Lorianne'; lory.event = 'Beach Day';
     this.portfolios.push(lory);
 
