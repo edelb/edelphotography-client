@@ -69,7 +69,7 @@
 
 #home section:hover img {
     transform: scale(1.1);
-    filter: brightness(75%) blur(4px) grayscale(0);
+    filter: blur(4px) brightness(75%) grayscale(0);
 }
 
 #home section:hover .text {
