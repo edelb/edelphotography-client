@@ -38,8 +38,8 @@
     width: 100%;
     padding: 20px;
     top: 38%;
-    background: rgba(0,0,0,0.5);
-    border-bottom: 3px solid white;
+    background: rgba(255,255,255,0.2);
+    border-bottom: 3px solid #28daa1;
     opacity: 0;
     transition: 0.5s ease;
     -webkit-box-shadow: 0px 10px 19px -4px rgba(0,0,0,0.45);
@@ -69,7 +69,12 @@
 
 #home section:hover img {
     transform: scale(1.1);
-    filter: blur(4px) brightness(75%) grayscale(0);
+    filter: brightness(35%) grayscale(0);
+    -webkit-filter: brightness(35%) grayscale(0);
+    -moz-filter: brightness(35%) grayscale(0);
+    -o-filter: brightness(35%) grayscale(0);
+    -ms-filter: brightness(35%) grayscale(0);
+    filter: brightness(35%) grayscale(0);
 }
 
 #home section:hover .text {
@@ -86,10 +91,9 @@
 
 #home section:hover .text:hover {
     border-bottom: 3px solid #28daa1;
-    -webkit-box-shadow: 0px 10px 23px -3px rgba(0,0,0,0.50);
-    -moz-box-shadow: 0px 10px 23px -3px rgba(0,0,0,0.50);
-    box-shadow: 0px 10px 23px -3px rgba(0,0,0,0.50);
-    /* transition: 0.1s ease; */
+    -webkit-box-shadow: 0px 5px 15px -3px rgba(255,255,255,0.2);
+    -moz-box-shadow: 0px 5px 15px -3px rgba(255,255,255,0.2);
+    box-shadow: 0px 5px 15px -3px rgba(255,255,255,0.2);
 }
 
 @media (max-width: 1000px) {
