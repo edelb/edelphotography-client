@@ -37,5 +37,11 @@ export const appRoutes: Routes = [
   {
     path: 'portfolio/view',
     component: PortfolioViewComponent
-  }
+  },
+
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: '/'
+}
 ];
