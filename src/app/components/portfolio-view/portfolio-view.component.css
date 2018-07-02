@@ -26,7 +26,7 @@
 
 .tool-tip {
     position: fixed;
-    top: 47%;
+    bottom: 50%;
     font-size: 20px;
     z-index: 1;
     background: rgba(0,0,0, 0.7);

@@ -15,12 +15,19 @@ export class NavbarComponent implements OnInit {
   }
 
   /**
-   * Click event on hamburger menu.
+   * Click event to close hamburger menu.
    */
-  private clickHamburger() {
-    if (window.innerWidth < 576) {
+  private clickHamburgerLink() {
+    if (window.innerWidth < 991) {
       this.hamburger.nativeElement.click();
     }
+  }
+
+  /**
+   * Click event to toggle hamburger animation.
+   */
+  private toggleHamburgerMenu() {
+    this.hamburger.nativeElement.classList.toggle('change');
   }
 
 }

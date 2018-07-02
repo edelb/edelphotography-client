@@ -45,7 +45,7 @@
 
 #photos section:hover img {
     transform: scale(1.1);
-    filter: brightness(70%) grayscale(0.25) blur(1px);
+    filter: brightness(60%) grayscale(0) blur(1px);
 }
 
 #photos section .overlay {

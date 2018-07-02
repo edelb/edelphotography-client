@@ -1,0 +1,49 @@
+#photos {
+    display: grid;
+    grid-template-columns: [col] auto [col] auto;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#photos section {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    margin-bottom: 15px;
+}
+
+#photos section img {
+    width: 100%;
+    transition: 0.5s ease;
+}
+
+#photos section:hover img {
+    transform: scale(1.1);
+    filter: brightness(70%) grayscale(0.25) blur(1px);
+}
+
+#photos section .overlay {
+    position: absolute;
+    border-radius: 5px;
+    height: 85%;
+    width: 85%;
+    top: 8%;
+    left: 7%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-image: -webkit-linear-gradient(-30deg, rgba(255, 255, 255, 0.35) 40%, rgba(0, 0, 0, 0) 40%);
+    -webkit-box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.5);
+}
+
+#photos section:hover .overlay {
+    opacity: 1;
+}
+
+#photos .bottom-picture {
+    grid-column: col / span 2;
+}

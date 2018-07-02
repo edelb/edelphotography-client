@@ -1,9 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-html {
-    position: relative;
-    min-height: 100%;
-}
-
 body {
     color: rgb(216, 216, 216);
     font-family: 'Montserrat', sans-serif;
@@ -13,8 +8,11 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
 
-    /* padding-top: 65px; */
+.heading {
+	margin-bottom: 15px;
+	text-align: center;
 }
 
 ::-webkit-input-placeholder

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ImageEntity } from '../../entities/ImageEntity';
+import { ImageService } from '../../services/image.service';
 
 @Component({
   selector: 'app-restorations',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestorationsComponent implements OnInit {
 
-  constructor() { }
+  private images: Array<ImageEntity> = null;
+  private path = 'restorations';
+  private files = 11;
+
+  constructor(private imageService: ImageService) { }
 
   ngOnInit() {
+    this.imageService.scrollTop();
+    this.images = this.imageService.loadImagesFromAssets(this.path, this.files);
+  }
+
+  private disableContextMenu() {
+    this.imageService.disableContextMenu('fancybox-container');
   }
 
 }

@@ -35,7 +35,7 @@ export class ImageService {
     this.portfolios.push(nacira);
 
     const lory = new PortfolioEntity();
-    lory.id = 2; lory.path = 'portfolio-lory'; lory.files = 8;
+    lory.id = 2; lory.path = 'portfolio-lory'; lory.files = 12;
     lory.title = 'Lorianne'; lory.event = 'Beach Day';
     this.portfolios.push(lory);
 
@@ -68,6 +68,19 @@ export class ImageService {
   }
 
   /**
+   * Disables context menu on fancybox lightbox images.
+   * @param name Class name or identifier
+   */
+  public disableContextMenu(name) {
+    setTimeout( () => {
+      const fancybox = document.getElementsByClassName(name);
+      for (let i = 0; i < fancybox.length; i++) {
+        fancybox[i].setAttribute('onContextMenu', 'return false');
+      }
+    }, 100 );
+  }
+
+  /**
    * Returns an Observable of ImageEntity Array based on a given path.
    * @param path Path of images to retrieve (i.e. portfolio-day1)
    */
@@ -78,14 +91,14 @@ export class ImageService {
   /**
    * Returns an array of ImageEntity based on the given path and number of files.
    * @param path Portfolio path
-   * @param numberOfFiles Number of photos in that path
+   * @param files Number of photos in that path
    */
-  public loadImagesFromAssets(path: string, numberOfFiles: number): Array<ImageEntity> {
+  public loadImagesFromAssets(path: string, files: number): Array<ImageEntity> {
     const images = new Array<ImageEntity>();
 
     path = path.replace(new RegExp('-', 'g'), '/');
 
-    for (let i = 0; i < numberOfFiles; i++) {
+    for (let i = 0; i < files; i++) {
       const image = new ImageEntity();
       image.gallery = path;
       image.id = `${image.gallery}-${i + 1}`;
