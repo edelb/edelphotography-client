@@ -27,17 +27,13 @@
               "node_modules/@fortawesome/fontawesome-free/css/all.css",
               "node_modules/overlayscrollbars/css/OverlayScrollbars.css",
               "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css",
-              "node_modules/photoswipe/dist/photoswipe.css",
-              "node_modules/photoswipe/dist/default-skin/default-skin.css",
               "src/styles.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/overlayscrollbars/js/OverlayScrollbars.js",
-              "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js",
-              "node_modules/photoswipe/dist/photoswipe.min.js",
-              "node_modules/photoswipe/dist/photoswipe-ui-default.min.js"
+              "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js"
             ]
           },
           "configurations": {
