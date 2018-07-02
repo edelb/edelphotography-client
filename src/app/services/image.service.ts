@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { ImageEntity } from '../entities/ImageEntity';
 import { HttpClient } from '@angular/common/http';
-import 'rxjs/add/operator/retry';
-import 'rxjs/add/operator/map';
 import { PortfolioEntity } from '../entities/PortfolioEntity';
 
 @Injectable()
