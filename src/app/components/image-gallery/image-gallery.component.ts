@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { ImageEntity } from '../../entities/ImageEntity';
 import { ImageService } from '../../services/image.service';
 import { PortfolioEntity } from '../../entities/PortfolioEntity';

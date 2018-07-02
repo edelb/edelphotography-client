@@ -1,8 +1,0 @@
-npm install @fancyapps/fancybox --save
-npm i font-awesome --save
-npm install overlayscrollbars --save
-npm install passport
-npm install passport-flickr
-npm install jso --save-dev
-npm i --save @zalando/oauth2-client-js
-install justified-gallery

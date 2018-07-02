@@ -13,7 +13,6 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { ImageGalleryComponent } from './components/image-gallery/image-gallery.component';
-import { FlickrService } from './services/flickr.service';
 import { MontagesComponent } from './components/montages/montages.component';
 import { RestorationsComponent } from './components/restorations/restorations.component';
 import { ImageService } from './services/image.service';
@@ -40,7 +39,6 @@ import { UserService } from './services/user.service';
     HttpClientModule
   ],
   providers: [
-    FlickrService,
     ImageService,
     UserService
   ],

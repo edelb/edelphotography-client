@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import * as $ from 'jquery';
+import * as OverlayScrollbars from 'overlayscrollbars';
 
 @Component({
   selector: 'app-navbar',
@@ -12,6 +14,7 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.overlayScrollbars();
   }
 
   /**
@@ -28,6 +31,20 @@ export class NavbarComponent implements OnInit {
    */
   private toggleHamburgerMenu() {
     this.hamburger.nativeElement.classList.toggle('change');
+  }
+
+  /**
+   * Replaces the scrollbar with OverlayScrollbars.
+   */
+  private overlayScrollbars() {
+    $(function() {
+      // The first argument are the elements to which the plugin shall be initialized
+      // The second argument has to be at least a empty object or a object with your desired options
+      OverlayScrollbars(document.body, { className : 'os-theme-light' });
+
+      // For specific elements
+      // OverlayScrollbars(document.getElementById('content'), { className : "os-theme-light", scrollbars: {autoHide: "leave"} });
+  });
   }
 
 }
