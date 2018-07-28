@@ -4,6 +4,5 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false,
-  S3Endpoint: 'https://s3.us-east-2.amazonaws.com/'
+  production: true
 };

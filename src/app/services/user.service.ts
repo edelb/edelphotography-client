@@ -4,7 +4,7 @@ import { UserEntity } from '../entities/UserEntity';
 @Injectable()
 export class UserService {
 
-    private user: UserEntity = null;
+    user: UserEntity = null;
 
     constructor () {
         this.user = new UserEntity();
@@ -18,7 +18,7 @@ export class UserService {
     /**
      * Returns current user entity.
      */
-    public getUser(): UserEntity {
+    getUser(): UserEntity {
         return this.user;
     }
 
@@ -26,7 +26,7 @@ export class UserService {
      * Sets current user entity.
      * @param user User Entity
      */
-    public setUser(user: UserEntity) {
+    setUser(user: UserEntity) {
         this.user = user;
     }
 

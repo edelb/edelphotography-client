@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
   /**
    * Click event to close hamburger menu.
    */
-  private clickHamburgerLink() {
+  clickHamburgerLink() {
     if (window.innerWidth < 991) {
       this.hamburger.nativeElement.click();
     }
@@ -29,14 +29,14 @@ export class NavbarComponent implements OnInit {
   /**
    * Click event to toggle hamburger animation.
    */
-  private toggleHamburgerMenu() {
+  toggleHamburgerMenu() {
     this.hamburger.nativeElement.classList.toggle('change');
   }
 
   /**
    * Replaces the scrollbar with OverlayScrollbars.
    */
-  private overlayScrollbars() {
+  overlayScrollbars() {
     $(function() {
       // The first argument are the elements to which the plugin shall be initialized
       // The second argument has to be at least a empty object or a object with your desired options

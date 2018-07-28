@@ -13,10 +13,10 @@ import { UserService } from '../../services/user.service';
 })
 export class ImageGalleryComponent implements OnInit {
 
-  private user: UserEntity;
-  private images: Array<ImageEntity>;
+  user: UserEntity;
+  images: Array<ImageEntity>;
 
-  @Input() private portfolio: PortfolioEntity;
+  @Input() public portfolio: PortfolioEntity;
 
   constructor(private imageService: ImageService, private userService: UserService) { }
 
@@ -30,7 +30,7 @@ export class ImageGalleryComponent implements OnInit {
   /**
    * Disables context menu on fancybox lightbox images.
    */
-  private disableContextMenu() {
+  disableContextMenu() {
     this.imageService.disableContextMenu('fancybox-container');
   }
 
@@ -38,7 +38,7 @@ export class ImageGalleryComponent implements OnInit {
    * Subscribes to observable and display images based on given path.
    * @param path Directory where images are stored
    */
-  private subscribeHome() {
+  subscribeHome() {
     // Load images initially
     this.images = this.portfolio.images;
 
@@ -59,7 +59,7 @@ export class ImageGalleryComponent implements OnInit {
    * Returns true if user liked the picture.
    * @param id ID of image entity
    */
-  private liked(id: string): boolean {
+  liked(id: string): boolean {
     for (let i = 0; i < this.user.images.length; i++) {
       if (id === this.user.images[i]) {
         return true;
@@ -72,7 +72,7 @@ export class ImageGalleryComponent implements OnInit {
    * Performs like operations. Adds picture to images array of current user.
    * @param id ID of image entity
    */
-  private like(id: string) {
+  like(id: string) {
     let liked = false;
 
     // Find image ID, if it exists, remove it

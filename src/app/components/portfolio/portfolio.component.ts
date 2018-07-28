@@ -10,10 +10,10 @@ import { ImageService } from '../../services/image.service';
 })
 export class PortfolioComponent implements OnInit {
 
-  private previous = false;
+  previous = false;
 
-  private portfolios = new Array<PortfolioEntity>();
-  private portfolio = new PortfolioEntity();
+  portfolios = new Array<PortfolioEntity>();
+  portfolio = new PortfolioEntity();
 
   constructor
   (
@@ -27,7 +27,7 @@ export class PortfolioComponent implements OnInit {
   ngOnInit() {
   }
 
-  public previousClick() {
+  previousClick() {
     this.previous = false;
   }
 
@@ -35,7 +35,7 @@ export class PortfolioComponent implements OnInit {
    * Loads pictures based on portfolio number
    * @param num Portfolio number
    */
-  private pictureClick(num: number) {
+  pictureClick(num: number) {
     for (let i = 1; i <= this.portfolios.length; i++) {
       if (num === i) {
 

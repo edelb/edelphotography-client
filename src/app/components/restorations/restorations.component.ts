@@ -9,9 +9,9 @@ import { ImageService } from '../../services/image.service';
 })
 export class RestorationsComponent implements OnInit {
 
-  private images: Array<ImageEntity> = null;
-  private path = 'restorations';
-  private files = 11;
+  images: Array<ImageEntity> = null;
+  path = 'restorations';
+  files = 11;
 
   constructor(private imageService: ImageService) { }
 
@@ -20,7 +20,7 @@ export class RestorationsComponent implements OnInit {
     this.images = this.imageService.loadImagesFromAssets(this.path, this.files);
   }
 
-  private disableContextMenu() {
+  disableContextMenu() {
     this.imageService.disableContextMenu('fancybox-container');
   }
 

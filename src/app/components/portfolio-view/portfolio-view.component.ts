@@ -10,7 +10,7 @@ import { ImageService } from '../../services/image.service';
 })
 export class PortfolioViewComponent implements OnInit {
 
-  private portfolio: PortfolioEntity;
+  portfolio: PortfolioEntity;
 
   constructor(private imageService: ImageService, private router: Router) { }
 
@@ -22,7 +22,7 @@ export class PortfolioViewComponent implements OnInit {
     }
   }
 
-  private goBack() {
+  goBack() {
     this.router.navigateByUrl('portfolio');
   }
 
