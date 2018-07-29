@@ -4,40 +4,40 @@ footer {
     width: 100%;
     padding: 1rem;
     font-size: 14px;
-    color: rgb(216, 216, 216);
     text-align: center;
 }
 
-a {
-    color: rgba(0, 230, 180, 0.836);
+footer a {
+    color: #00b87d;
     text-decoration: none;
-    border-bottom: 1px solid rgba(0, 230, 180, 0);
+    font-weight: bold;
+    border-bottom: 1px solid rgb(42, 42, 42);
 }
 
-a:hover {
-    border-bottom: 1px solid rgba(0, 230, 180, 0.836);
+footer a:hover {
+    color: #28daa1;
+    border-bottom: 1px solid #00b87d;
 }
 
-hr {
+footer hr {
     border: 0;
     height: 2px;
-    color: white;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+    background-image: linear-gradient(to right, rgba(120, 120, 120, 0), rgba(120, 120, 120, 0.75), rgba(120, 120, 120, 0));
 }
 
-.credit {
+footer .credit {
     font-size: 12px;
 }
 
 /* Small devices (tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-    .footer {
+    footer {
         font-size: 13px;
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    .footer {
+    footer {
         font-size: 15px;
     }
 }
