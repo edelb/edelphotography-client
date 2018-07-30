@@ -44,7 +44,7 @@ export class NavbarComponent implements OnInit {
 
       // For specific elements - div needs to have specific height
       // OverlayScrollbars(document.getElementById('content'), { className : "os-theme-light", scrollbars: {autoHide: "leave"} });
-  });
+    });
   }
 
 }

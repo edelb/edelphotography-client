@@ -25,6 +25,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.imageService.scrollTop();
   }
 
   previousClick() {

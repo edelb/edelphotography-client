@@ -27,6 +27,10 @@ import { Observable } from 'rxjs';
 import { ImageEntity } from '../entities/ImageEntity';
 import { HttpClient } from '@angular/common/http';
 import { PortfolioEntity } from '../entities/PortfolioEntity';
+import { endpoints } from '../../environments/environment';
+import * as OverlayScrollbars from 'overlayscrollbars';
+import { SizeEntity } from '../entities/SizeEntity';
+import { PhotoEntity } from '../entities/PhotoEntity';
 
 @Injectable()
 export class ImageService {
@@ -43,8 +47,10 @@ export class ImageService {
    * Scroll to the top of the page
    */
   scrollTop() {
-    const view = document.getElementById('menu-bar');
-    view.scrollIntoView();
+    $(function() {
+      const scrollbar = OverlayScrollbars(document.body, {  });
+      scrollbar.scroll(0, 500, [ 'easeOutElastic' ]);
+    });
   }
 
   /**
@@ -104,10 +110,10 @@ export class ImageService {
 
   /**
    * Returns an Observable of ImageEntity Array based on a given path.
-   * @param path Path of images to retrieve (i.e. portfolio-day1)
+   * @param album Album of images to retrieve (i.e. portfolio-day1)
    */
-  loadImagesFromServer(path: string): Observable<Array<ImageEntity>> {
-    return this.http.get<Array<ImageEntity>>('http://localhost:8080/images/' + path);
+  loadImagesFromFlickrAlbum(album: string): Observable<Array<PhotoEntity>> {
+    return this.http.get<Array<PhotoEntity>>(endpoints.flickr + 'images/album/' + album);
   }
 
   /**
@@ -133,12 +139,19 @@ export class ImageService {
     return images;
   }
 
+  generateSizes(photo: PhotoEntity): SizeEntity {
+    const size = new SizeEntity();
+
+    return size;
+  }
+
   /**
    * Check server status every second.
    */
   checkServerStatus() {
+    /*
     let checkServer$: Observable<Array<ImageEntity>>;
-    checkServer$ = this.loadImagesFromServer('p');
+    checkServer$ = this.loadImagesFromFlickrAlbum('p');
     checkServer$.subscribe(resp => {
       ImageService.serverActive = true;
     },
@@ -146,6 +159,7 @@ export class ImageService {
     err => {
       ImageService.serverActive = false;
     });
+    */
 
       /*
       const sessionChecker = setInterval(() => {

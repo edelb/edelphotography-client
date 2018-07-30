@@ -6,3 +6,8 @@
 export const environment = {
   production: false
 };
+
+export const endpoints = {
+  flickr: 'http://18.220.214.160:8081/',
+  s3: 'http://18.220.214.160:8081/'
+};
