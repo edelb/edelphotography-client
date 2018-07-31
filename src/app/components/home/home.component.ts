@@ -11,7 +11,6 @@ import { PhotosetEntity } from '../../entities/PhotosetEntity';
 export class HomeComponent implements OnInit {
 
   photoset: PhotosetEntity;
-  photoset_tmp: PhotosetEntity;
 
   constructor(private imageService: ImageService, private flickrService: FlickrService) { }
 
@@ -32,21 +31,31 @@ export class HomeComponent implements OnInit {
     } else {
       this.requestImages();
     }
-    this.photoset_tmp = this.photoset;
   }
 
   /**
    * Request server to retrieve images.
    */
   requestImages() {
-    this.flickrService.getImagesFromAlbum('portfolio-nacira')
-    .subscribe(resp => {
-      this.imageService.homePhotoset = resp[0];
-      this.photoset = this.imageService.homePhotoset;
+    // Authorize edel-read. If true, request images.
+    this.flickrService.authorize('edel-read').subscribe(authorized => {
+
+      // Request images if true
+      if (authorized) {
+        this.flickrService.getImagesFromAlbum('portfolio-nacira')
+        .subscribe(resp => {
+          this.imageService.homePhotoset = resp[0];
+          this.photoset = this.imageService.homePhotoset;
+        },
+
+        imagesErr => {
+          console.log(imagesErr);
+        });
+      }
     },
 
-    err => {
-      console.log(err);
+    authErr => {
+      console.log(authErr);
     });
   }
 

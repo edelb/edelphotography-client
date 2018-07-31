@@ -54,6 +54,10 @@ export class FlickrService {
         return this.http.get<PhotoEntity>(endpoints.flickr + `images/album/${albumIdOrTitle}/photos/${photoIdOrTitle}`);
     }
 
+    authorize(authName: string): Observable<boolean> {
+        return this.http.post<boolean>(endpoints.flickr + `auth/${authName}`, { });
+    }
+
     generateSizes(photo: PhotoEntity): SizeEntity {
     const size = new SizeEntity();
 
