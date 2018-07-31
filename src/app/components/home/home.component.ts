@@ -45,7 +45,15 @@ export class HomeComponent implements OnInit {
         this.flickrService.getImagesFromAlbum('portfolio-nacira')
         .subscribe(resp => {
           this.imageService.homePhotoset = resp[0];
+
+          // generate sizes for each photo
+          const photos = this.imageService.homePhotoset.photos;
+          for (let i = 0; i < photos.length; i++) {
+            photos[i].sizes = this.flickrService.generateSizes(photos[i]);
+          }
+
           this.photoset = this.imageService.homePhotoset;
+          console.log(this.photoset);
         },
 
         imagesErr => {

@@ -54,14 +54,139 @@ export class FlickrService {
         return this.http.get<PhotoEntity>(endpoints.flickr + `images/album/${albumIdOrTitle}/photos/${photoIdOrTitle}`);
     }
 
+    /**
+     * Returns an Observable of boolean based on a given path.
+     * @param authName name of authorization (i.e. edel-read)
+     */
     authorize(authName: string): Observable<boolean> {
         return this.http.post<boolean>(endpoints.flickr + `auth/${authName}`, { });
     }
 
-    generateSizes(photo: PhotoEntity): SizeEntity {
-    const size = new SizeEntity();
+    /**
+     * Returns Array of SizeEntity with all sizes of a photo.
+     * @param photo PhotoEntity
+     */
+    generateSizes(photo: PhotoEntity): Array<SizeEntity> {
+        const sizes = new Array<SizeEntity>();
 
-        return size;
+        // small square (_s)
+        const square = new SizeEntity();
+        square.label = 'Square';
+        square.width = 75;
+        square.height = 75;
+        square.source = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_s.jpg`;
+        square.url = ``;
+        square.media = 'photo';
+
+        // large square  150(_q)
+        const squareLarge = new SizeEntity();
+        squareLarge.label = 'Square Large';
+        squareLarge.width = 150;
+        squareLarge.height = 150;
+        squareLarge.source = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_q.jpg`;
+        square.url = ``;
+        square.media = 'photo';
+
+        // thumbnail (_t)
+        const thumbnail = new SizeEntity();
+        thumbnail.label = 'Thumbnail';
+        thumbnail.width = 0;
+        thumbnail.height = 0;
+        thumbnail.source = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_t.jpg`;
+        square.url = ``;
+        square.media = 'photo';
+
+        // small 240 (_m)
+        const small = new SizeEntity();
+        small.label = 'Small';
+        thumbnail.width = 0;
+        thumbnail.height = 0;
+        small.source = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_m.jpg`;
+        square.url = ``;
+        square.media = 'photo';
+
+        // small square (_n)
+        const small320 = new SizeEntity();
+        small320.label = 'Small 320';
+        thumbnail.width = 0;
+        thumbnail.height = 0;
+        small320.source = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_n.jpg`;
+        square.url = ``;
+        square.media = 'photo';
+
+        // medium ()
+        const medium = new SizeEntity();
+        medium.label = 'Medium';
+        thumbnail.width = 0;
+        thumbnail.height = 0;
+        medium.source = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
+        square.url = ``;
+        square.media = 'photo';
+
+        // medium 640 (_z)
+        const medium640 = new SizeEntity();
+        medium640.label = 'Medium 640';
+        thumbnail.width = 0;
+        thumbnail.height = 0;
+        medium640.source = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_z.jpg`;
+        square.url = ``;
+        square.media = 'photo';
+
+        // medium 800 (_c)
+        const medium800 = new SizeEntity();
+        medium800.label = 'Medium 800';
+        thumbnail.width = 0;
+        thumbnail.height = 0;
+        medium800.source = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_c.jpg`;
+        square.url = ``;
+        square.media = 'photo';
+
+        // large 1024 (_b)
+        const large = new SizeEntity();
+        large.label = 'Large';
+        thumbnail.width = 0;
+        thumbnail.height = 0;
+        large.source = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_b.jpg`;
+        square.url = ``;
+        square.media = 'photo';
+
+        // large 1600 (_h)
+        const large1600 = new SizeEntity();
+        large1600.label = 'Large 1600';
+        thumbnail.width = 0;
+        thumbnail.height = 0;
+        large1600.source = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_h.jpg`;
+        square.url = ``;
+        square.media = 'photo';
+
+        // large 2048 (_k)
+        const large2048 = new SizeEntity();
+        large2048.label = 'Large 2048';
+        thumbnail.width = 0;
+        thumbnail.height = 0;
+        large2048.source = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_k.jpg`;
+        square.url = ``;
+        square.media = 'photo';
+
+        // original (_o)
+        const original = new SizeEntity();
+        original.label = 'Origial';
+        thumbnail.width = 0;
+        thumbnail.height = 0;
+        original.source = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_o.jpg`;
+        square.url = ``;
+        square.media = 'photo';
+
+        const arr = [
+            square, squareLarge, thumbnail, small, small320, medium,
+            medium640, medium800, large, large1600, large2048, original
+        ];
+
+        for (let i = 0; i < arr.length; i++) {
+            sizes.push(arr[i]);
+        }
+
+        return sizes;
     }
 
     /**
