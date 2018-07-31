@@ -9,5 +9,5 @@ export const environment = {
 
 export const endpoints = {
   flickr: 'http://18.220.214.160:8081/',
-  s3: 'http://18.220.214.160:8081/'
+  localhost: 'http://localhost:8081/'
 };

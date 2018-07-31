@@ -1,3 +1,5 @@
+import { SizeEntity } from './SizeEntity';
+
 /**
  * Represents a Photo Entity with contents of an image
  * to create image URL.
@@ -8,4 +10,5 @@ export class PhotoEntity {
     server: string;
     farm: number;
     title: string;
+    sizes: Array<SizeEntity>;
 }

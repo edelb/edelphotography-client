@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
 import { ImageService } from '../../services/image.service';
-import { Observable } from 'rxjs';
-import { PhotoEntity } from '../../entities/PhotoEntity';
+import { FlickrService } from '../../services/flickr.service';
+import { PhotosetEntity } from '../../entities/PhotosetEntity';
 
 @Component({
   selector: 'app-home',
@@ -11,17 +10,39 @@ import { PhotoEntity } from '../../entities/PhotoEntity';
 })
 export class HomeComponent implements OnInit {
 
-   images$: Observable<Array<PhotoEntity>>;
-   images: Array<PhotoEntity>;
+  photoset: PhotosetEntity;
+  photoset_tmp: PhotosetEntity;
 
-  constructor(private imageService: ImageService) { }
+  constructor(private imageService: ImageService, private flickrService: FlickrService) { }
 
   ngOnInit() {
     this.imageService.scrollTop();
-    this.images$ = this.imageService.loadImagesFromFlickrAlbum('portfolio-lory');
-    this.images$.subscribe(resp => {
-      this.images = resp;
-      console.log(this.images);
+    this.loadImages();
+  }
+
+  /**
+   * Load images and set photoset.
+   */
+  loadImages() {
+    // If photoset is not null, load previous photoset and request to update photoset.
+    // Else, request to get photoset for the first time.
+    if (this.imageService.homePhotoset) {
+      this.photoset = this.imageService.homePhotoset;
+      this.requestImages();
+    } else {
+      this.requestImages();
+    }
+    this.photoset_tmp = this.photoset;
+  }
+
+  /**
+   * Request server to retrieve images.
+   */
+  requestImages() {
+    this.flickrService.getImagesFromAlbum('portfolio-nacira')
+    .subscribe(resp => {
+      this.imageService.homePhotoset = resp[0];
+      this.photoset = this.imageService.homePhotoset;
     },
 
     err => {

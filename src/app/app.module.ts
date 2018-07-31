@@ -11,13 +11,14 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
-
 import { ImageGalleryComponent } from './components/image-gallery/image-gallery.component';
 import { MontagesComponent } from './components/montages/montages.component';
 import { RestorationsComponent } from './components/restorations/restorations.component';
-import { ImageService } from './services/image.service';
 import { PortfolioViewComponent } from './components/portfolio-view/portfolio-view.component';
+
+import { ImageService } from './services/image.service';
 import { UserService } from './services/user.service';
+import { FlickrService } from './services/flickr.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { UserService } from './services/user.service';
   ],
   providers: [
     ImageService,
+    FlickrService,
     UserService
   ],
   bootstrap: [AppComponent]

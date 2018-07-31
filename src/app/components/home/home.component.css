@@ -73,7 +73,7 @@
 
 #home section:hover img {
     transform: scale(1.1);
-    filter: brightness(35%) grayscale(0);
+    filter: brightness(50%) grayscale(0);
 }
 
 #home section:hover .text {
