@@ -63,6 +63,14 @@ export class FlickrService {
     }
 
     /**
+     * Returns an Observable of SizeEntity based on a given path.
+     * @param photoId ID of photo
+     */
+    getSizesOfImage(photoId: string): Observable<Array<SizeEntity>> {
+        return this.http.get<Array<SizeEntity>>(endpoints.flickr + `image/sizes/${photoId}`);
+    }
+
+    /**
      * Returns Array of SizeEntity with all sizes of a photo.
      * @param photo PhotoEntity
      */

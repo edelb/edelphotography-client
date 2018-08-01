@@ -3,6 +3,9 @@
     
     <div *ngIf="photoset">
         {{ photoset.description }}
+        <div *ngIf="photoset.photos[0].sizes.length === 12">
+            {{ photoset.photos[0].sizes[0].label }}
+        </div>
     </div>
 
     <section routerLink="portfolio" onContextMenu="return false;">
