@@ -16,7 +16,6 @@ export class PortfolioViewComponent implements OnInit {
 
   ngOnInit() {
     this.portfolio = this.imageService.getPortfolio();
-    this.imageService.scrollTop();
     if (!this.portfolio) {
       this.goBack();
     }

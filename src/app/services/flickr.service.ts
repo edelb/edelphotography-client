@@ -26,11 +26,15 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { endpoints } from '../../environments/environment';
+// import { endpoints } from '../../environments/environment';
 import { PhotosetEntity } from '../entities/PhotosetEntity';
 import { PhotoEntity } from '../entities/PhotoEntity';
 import { SizeEntity } from '../entities/SizeEntity';
-
+export const endpoints = {
+    flickr: 'http://18.220.214.160:8081/',
+    localhost: 'http://localhost:8081/',
+    // flickr: 'http://localhost:8081/',
+  };
 @Injectable()
 export class FlickrService {
 

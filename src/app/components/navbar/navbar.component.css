@@ -1,53 +1,68 @@
 #menu-bar {
-    background: rgba(240, 240, 240, 0.25);
+    background: rgba(240, 240, 240, 1);
     margin-bottom: 20px;
     -webkit-box-shadow: 0px 3px 30px -5px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 3px 30px -5px rgba(0,0,0,0.3);
     box-shadow: 0px 3px 30px -5px rgba(0,0,0,0.3);
 }
 
-#navbar a {
-    font-size: 16px;
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.3);
+}
+
+.navbar a {
     cursor: pointer;
-    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    border-bottom: 2px solid rgba(209, 172, 172, 0);
     transition: 0.3s;
-    color: rgb(44, 44, 44);
 }
 
-#navbar a:hover {
-    border-bottom: 2px solid #00b87d;
+.navbar-nav li {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid white;
     transition-timing-function: ease-in;
-    
+    background: rgba(255, 255, 255, 0.2);
 }
 
-#navbar .active {
-    border-bottom: 2px solid #28daa1;
+.navbar .active {
+    border-bottom: 2px solid white;
     transition-timing-function: ease-in;
+    background: rgba(255, 255, 255, 0.2);
 }
 
-.icon {
+.navbar-brand {
+    font-family: 'Mali', cursive;
+}
+
+.navbar-brand img {
     width: 50px;
-}
-
-.icon a {
-    border-bottom: 0;
-}
-
-.icon a:hover {
-    border-bottom: 0;
-}
-
-.icon img {
-    width: 100%;
 }
 
 .navbar-nav {
     padding-left: 20px;
 }
 
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    outline: none;
+    cursor: pointer;
+}
+
 /* Hamburger Menu */
 .bars-container {
-    display: none;
     cursor: pointer;
     margin-right: 10px;
 }
@@ -55,7 +70,7 @@
 .bar1, .bar2, .bar3 {
     width: 20px;
     height: 2px;
-    background-color: rgb(156, 156, 156);
+    background-color: rgb(255, 255, 255);
     margin: 5px 0;
     transition: 0.4s;
 }
@@ -73,12 +88,28 @@
 }
 /* End Hamburger Menu */
 
-@media (max-width: 575px) {
-    .bars-container {
-        display: inline-block;
+@media (max-width: 991px) {
+    .navbar {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .navbar-brand {
+        margin: 0 auto;
+        padding-left: 50px;
     }
 
     .navbar-nav {
         padding-left: 7px;
+    }
+
+    .menu-icon i {
+        width: 25px;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-brand {
+        padding-left: 0px;
     }
 }

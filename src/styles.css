@@ -1,11 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~mdbootstrap/css/mdb.min.css';
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import '~@fancyapps/fancybox/dist/jquery.fancybox.min.css';
+@import '~jquery-typeahead/dist/jquery.typeahead.min.css';
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+@import url('https://fonts.googleapis.com/css?family=Mali:300');
+
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    position: relative;
+}
+
+#main-container {
+	/* will cover the 100% of viewport */
+	min-height: 100vh; 
+
+    overflow: hidden;
+    display: block;
+    position: relative;
+
+	/* height of your footer */
+	padding-bottom: 220px;
+}
+
 body {
     color: rgb(44, 44, 44);
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-	background-color: #f0f0f0;
-	background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%23dcdcdc' fill-opacity='0.3' fill-rule='evenodd'/%3E%3C/svg%3E");
-	
+	font-size: 1em;
+	font-weight: 300;
+	padding-top: 100px;
+	background-color: #f9f9f9;
+	background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23b0acb6' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+
 	/* background: url("/assets/backgrounds/clouds.jpg") no-repeat center center fixed; */	
 	/* -webkit-background-size: cover; */
     /* -moz-background-size: cover; */
@@ -45,4 +82,10 @@ body {
 @keyframes animatezoom {
 	from {transform: scale(0)} 
 	to {transform: scale(1)}
+}
+
+@media(max-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
 }

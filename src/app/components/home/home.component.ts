@@ -3,6 +3,7 @@ import { ImageService } from '../../services/image.service';
 import { FlickrService } from '../../services/flickr.service';
 import { PhotosetEntity } from '../../entities/PhotosetEntity';
 import { SizeEntity } from '../../entities/SizeEntity';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-home',
@@ -16,8 +17,11 @@ export class HomeComponent implements OnInit {
   constructor(private imageService: ImageService, private flickrService: FlickrService) { }
 
   ngOnInit() {
-    this.imageService.scrollTop();
     this.loadImages();
+    $('#home section').click(function() {
+      const body = $('html, nav');
+      body.animate({scrollTop: 0}, 500, 'swing'); // animate scrollTop
+    });
   }
 
   /**

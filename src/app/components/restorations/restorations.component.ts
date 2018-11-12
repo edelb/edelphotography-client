@@ -16,7 +16,6 @@ export class RestorationsComponent implements OnInit {
   constructor(private imageService: ImageService) { }
 
   ngOnInit() {
-    this.imageService.scrollTop();
     this.images = this.imageService.loadImagesFromAssets(this.path, this.files);
   }
 

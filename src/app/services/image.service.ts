@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { ImageEntity } from '../entities/ImageEntity';
 import { HttpClient } from '@angular/common/http';
 import { PortfolioEntity } from '../entities/PortfolioEntity';
-import * as OverlayScrollbars from 'overlayscrollbars';
 import { PhotosetEntity } from '../entities/PhotosetEntity';
 
 @Injectable()
@@ -14,16 +13,6 @@ export class ImageService {
 
   constructor(private http: HttpClient) {
     this.loadPortfolios();
-  }
-
-  /**
-   * Scroll to the top of the page
-   */
-  scrollTop() {
-    $(function() {
-      const scrollbar = OverlayScrollbars(document.body, {  });
-      scrollbar.scroll(0, 500, [ 'easeOutElastic' ]);
-    });
   }
 
   /**

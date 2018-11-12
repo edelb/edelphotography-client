@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { PortfolioEntity } from '../../entities/PortfolioEntity';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ImageService } from '../../services/image.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-portfolio',
@@ -25,7 +26,12 @@ export class PortfolioComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.imageService.scrollTop();
+    $(document).ready(function() {
+      const body = $('html, nav');
+      $('#home section').click(function() {
+        body.animate({scrollTop: 0}, 500, 'swing'); // animate scrollTop
+      });
+    });
   }
 
   previousClick() {

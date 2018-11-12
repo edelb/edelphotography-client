@@ -1,29 +1,73 @@
-<nav id="menu-bar" class="navbar navbar-static-top navbar-expand-sm">
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color fixed-top scrolling-navbar">
 
-  <span class="icon"><a routerLink="/"><img src="../../../favicon.png"></a></span>
-
-  <div #hamburger class="bars-container" (click)="toggleHamburgerMenu()" data-toggle="collapse" data-target="#navbar">
-    <div class="bar1"></div>
-    <div class="bar2"></div>
-    <div class="bar3"></div>
+  <div class="navbar-brand unselectable" routerLink="/">
+    <!-- <span class="icon"><a routerLink="/"><img src="../../../favicon.png"></a></span> -->
+    EDEL PHOTOGRAPHY
   </div>
 
-  <div class="collapse navbar-collapse" id="navbar">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item" (click)="clickHamburgerLink()">
-        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link" routerLink="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <div id="hamburger" class="bars-container" data-toggle="collapse">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbar-content">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <span class="menu-icon">
+            <i class="fas fa-home"></i>
+          </span>
+          <span class="menu-text">
+            Home
+          </span>          
+        </a>
       </li>
-      <li class="nav-item" (click)="clickHamburgerLink()">
-        <a routerLinkActive="active" class="nav-link" routerLink="portfolio">Portfolio</a>
+
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light" routerLink="portfolio" routerLinkActive="active">
+          <span class="menu-icon">
+            <i class="fas fa-camera-retro"></i>
+          </span>
+          <span class="menu-text">
+            Portfolio
+          </span>
+        </a>
       </li>
-      <li class="nav-item" (click)="clickHamburgerLink()">
-        <a routerLinkActive="active" class="nav-link" routerLink="montages">Montages</a>
+
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light" routerLink="montages" routerLinkActive="active">
+          <span class="menu-icon">
+            <i class="far fa-images"></i>
+          </span>
+          <span class="menu-text">
+            Montages
+          </span>
+        </a>
       </li>
-      <li class="nav-item" (click)="clickHamburgerLink()">
-        <a routerLinkActive="active" class="nav-link" routerLink="restorations">Restorations</a>
+
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light" routerLink="restorations" routerLinkActive="active">
+          <span class="menu-icon">
+            <i class="fab fa-firstdraft"></i>
+          </span>
+          <span class="menu-text">
+            Restorations
+          </span>
+        </a>
       </li>
-      <li class="nav-item" (click)="clickHamburgerLink()">
-        <a routerLinkActive="active" class="nav-link" routerLink="contact">Contact</a>
+
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light" routerLink="contact" routerLinkActive="active">
+          <span class="menu-icon">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="menu-text">
+            Contact
+          </span>
+        </a>
       </li>
     </ul>
   </div>

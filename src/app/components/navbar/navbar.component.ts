@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import * as $ from 'jquery';
-import * as OverlayScrollbars from 'overlayscrollbars';
 
 @Component({
   selector: 'app-navbar',
@@ -14,36 +13,40 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.overlayScrollbars();
-  }
+    $(document).ready(function() {
+      const body = $('html, nav');
+      // add click event to close menu when clicking on a link
+      $('.navbar-collapse li').click(function() {
+        body.animate({scrollTop: 0}, 500, 'swing'); // animate scrollTop
+        if ($('.navbar-collapse').hasClass('show')) {
+          $('.navbar-toggler').click();
+          $('#hamburger').toggleClass('change');
+        }
+      });
 
-  /**
-   * Click event to close hamburger menu.
-   */
-  clickHamburgerLink() {
-    if (window.innerWidth < 991) {
-      this.hamburger.nativeElement.click();
-    }
-  }
+      // add click event to close menu when clicking the main icon
+      $('.navbar-brand').click(function() {
+        body.animate({scrollTop: 0}, 500, 'swing'); // animate scrollTop
+        if ($('.navbar-collapse').hasClass('show')) {
+          $('.navbar-toggler').click();
+          $('#hamburger').toggleClass('change');
+        }
+      });
 
-  /**
-   * Click event to toggle hamburger animation.
-   */
-  toggleHamburgerMenu() {
-    this.hamburger.nativeElement.classList.toggle('change');
-  }
+      // close hamburger menu if clicked outside of menu
+      $(document).click(function(e) {
+        if ($('.navbar-collapse').hasClass('show')) {
+          if (e.pageY > $('nav').outerHeight()) {
+            $('.navbar-toggler').click();
+            $('#hamburger').toggleClass('change');
+          }
+        }
+      });
 
-  /**
-   * Replaces the scrollbar with OverlayScrollbars.
-   */
-  overlayScrollbars() {
-    $(function() {
-      // The first argument are the elements to which the plugin shall be initialized
-      // The second argument has to be at least a empty object or a object with your desired options
-      OverlayScrollbars(document.body, { });
-
-      // For specific elements - div needs to have specific height
-      // OverlayScrollbars(document.getElementById('content'), { className : "os-theme-light", scrollbars: {autoHide: "leave"} });
+      // add click event to hamburger menu
+      $('#hamburger').click(function() {
+        $(this).toggleClass('change');
+      });
     });
   }
 

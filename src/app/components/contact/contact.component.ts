@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageService } from '../../services/image.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,10 +7,9 @@ import { ImageService } from '../../services/image.service';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private imageService: ImageService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.imageService.scrollTop();
   }
 
 }
