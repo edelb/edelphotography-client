@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
@@ -8,44 +8,57 @@ import * as $ from 'jquery';
 })
 export class NavbarComponent implements OnInit {
 
-  @ViewChild('hamburger') hamburger: ElementRef;
-
   constructor() { }
 
   ngOnInit() {
     $(document).ready(function() {
       const body = $('html, nav');
+      const hamburger = $('nav button');
+      const winWidth = 991;
+      const changeBars = 'change-bars';
+
+      // add click event to hamburger menu
+      hamburger.click(function() {
+        if (window.innerWidth < winWidth) {
+          $( this ).toggleClass(changeBars);
+        }
+      });
+
       // add click event to close menu when clicking on a link
-      $('.navbar-collapse li').click(function() {
-        body.animate({scrollTop: 0}, 500, 'swing'); // animate scrollTop
-        if ($('.navbar-collapse').hasClass('show')) {
-          $('.navbar-toggler').click();
-          $('#hamburger').toggleClass('change');
+      $('.navbar .nav-item').each(function() {
+        if (($( this ).hasClass('login') || $( this ).hasClass('logout'))) {
+          $( this ).click(function() {
+            if ($('.navbar-toggler').hasClass(changeBars) && window.innerWidth < winWidth) {
+              hamburger.click();
+            }
+          });
+        } else {
+          $( this ).click(function() {
+            if ($('.navbar-toggler').hasClass(changeBars) && window.innerWidth < winWidth) {
+              body.animate({scrollTop: 0}, 500, 'swing');
+              hamburger.click();
+            } else {  // screen bigger than winWidth
+              body.animate({scrollTop: 0}, 500, 'swing');
+            }
+          });
         }
       });
 
       // add click event to close menu when clicking the main icon
       $('.navbar-brand').click(function() {
-        body.animate({scrollTop: 0}, 500, 'swing'); // animate scrollTop
-        if ($('.navbar-collapse').hasClass('show')) {
-          $('.navbar-toggler').click();
-          $('#hamburger').toggleClass('change');
+        body.animate({scrollTop: 0}, 500, 'swing');
+        if ($('.navbar-toggler').hasClass(changeBars) && window.innerWidth < winWidth) {
+          hamburger.click();
         }
       });
 
       // close hamburger menu if clicked outside of menu
-      $(document).click(function(e) {
-        if ($('.navbar-collapse').hasClass('show')) {
-          if (e.pageY > $('nav').outerHeight()) {
-            $('.navbar-toggler').click();
-            $('#hamburger').toggleClass('change');
+      $('#main-container').click(function(e) {
+        if (e.pageY && e.pageY > $('nav').outerHeight()) {
+          if ($('.navbar-toggler').hasClass(changeBars) && window.innerWidth < winWidth) {
+            hamburger.click();
           }
         }
-      });
-
-      // add click event to hamburger menu
-      $('#hamburger').click(function() {
-        $(this).toggleClass('change');
       });
     });
   }

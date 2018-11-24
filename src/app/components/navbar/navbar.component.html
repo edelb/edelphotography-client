@@ -1,17 +1,19 @@
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color fixed-top scrolling-navbar">
 
   <div class="navbar-brand unselectable" routerLink="/">
-    <!-- <span class="icon"><a routerLink="/"><img src="../../../favicon.png"></a></span> -->
+    <!-- <span class="icon"><img src="../../../favicon.png"></span> -->
     EDEL PHOTOGRAPHY
   </div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-    <div id="hamburger" class="bars-container" data-toggle="collapse">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-    </div>
-  </button>
+  <span class="bars-container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <div id="hamburger" data-toggle="collapse">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </button>
+  </span>
 
   <div class="collapse navbar-collapse justify-content-end" id="navbar-content">
     <ul class="navbar-nav">
@@ -68,6 +70,28 @@
             Contact
           </span>
         </a>
+      </li>
+
+      <li class="nav-item login">
+          <a class="nav-link waves-effect waves-light">
+            <span class="menu-icon">
+                <i class="fas fa-sign-in-alt"></i>
+            </span>
+            <span class="menu-text">
+              Log In
+            </span>
+          </a>
+      </li>
+
+      <li class="nav-item logout">
+          <a class="nav-link waves-effect waves-light">
+            <span class="menu-icon">
+                <i class="fas fa-sign-in-alt"></i>
+            </span>
+            <span class="menu-text">
+              Log Out
+            </span>
+          </a>
       </li>
     </ul>
   </div>

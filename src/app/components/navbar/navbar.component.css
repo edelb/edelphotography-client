@@ -1,23 +1,16 @@
-#menu-bar {
-    background: rgba(240, 240, 240, 1);
-    margin-bottom: 20px;
-    -webkit-box-shadow: 0px 3px 30px -5px rgba(0,0,0,0.3);
-    -moz-box-shadow: 0px 3px 30px -5px rgba(0,0,0,0.3);
-    box-shadow: 0px 3px 30px -5px rgba(0,0,0,0.3);
-}
-
 .navbar {
-    padding-top: 15px;
-    padding-bottom: 15px;
     -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.3);
     box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.3);
+    background-color: #2bbbad;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23b0acb6' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E") !important;
 }
 
 .navbar a {
     cursor: pointer;
     border-bottom: 2px solid rgba(209, 172, 172, 0);
     transition: 0.3s;
+    padding: 16px 12px;
 }
 
 .navbar-nav li {
@@ -45,8 +38,27 @@
     width: 50px;
 }
 
-.navbar-nav {
-    padding-left: 20px;
+.login {
+    display: block;
+    text-align: right;
+}
+
+.logout {
+    display: none;
+    text-align: right;
+}
+
+/* animation and padding for scrolling navbar */
+.navbar.scrolling-navbar {
+    transition: background .5s ease-in-out,padding .5s ease-in-out;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.navbar.scrolling-navbar.top-nav-collapse {
+    transition: background .5s ease-in-out,padding .5s ease-in-out;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .unselectable {
@@ -63,8 +75,9 @@
 
 /* Hamburger Menu */
 .bars-container {
+    max-width: 43px;
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .bar1, .bar2, .bar3 {
@@ -75,41 +88,52 @@
     transition: 0.4s;
 }
 
-.change .bar1 {
+.change-bars .bar1 {
     -webkit-transform: rotate(-45deg) translate(-6px, 6px);
     transform: rotate(-45deg) translate(-6px, 6px);
 }
 
-.change .bar2 {opacity: 0;}
+.change-bars .bar2 {opacity: 0;}
 
-.change .bar3 {
+.change-bars .bar3 {
     -webkit-transform: rotate(45deg) translate(-4px, -4px);
     transform: rotate(45deg) translate(-4px, -4px);
 }
 /* End Hamburger Menu */
 
 @media (max-width: 991px) {
-    .navbar {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
     .navbar-brand {
-        margin: 0 auto;
-        padding-left: 50px;
+        padding: 16px 12px;
     }
 
-    .navbar-nav {
-        padding-left: 7px;
+    .navbar a {
+        padding: 8px 6px;
+        padding-left: 15px;
+    }
+
+    .navbar-nav li {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    #navbar-content {
+        background-color: #209b8e;
+        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23b0acb6' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E") !important;
+        -webkit-box-shadow: inset 0px 55px 20px -50px rgba(0,0,0,0.3);
+        -moz-box-shadow: inset 0px 55px 20px -50px rgba(0,0,0,0.3);
+        box-shadow: inset 0px 55px 20px -50px rgba(0,0,0,0.3);
     }
 
     .menu-icon i {
         width: 25px;
     }
-}
 
-@media (max-width: 991px) {
-    .navbar-brand {
-        padding-left: 0px;
+    /* animation and padding for scrolling navbar */
+    .navbar.scrolling-navbar {
+        padding: 0;
+    }
+
+    .navbar.scrolling-navbar.top-nav-collapse {
+        padding: 0;
     }
 }
