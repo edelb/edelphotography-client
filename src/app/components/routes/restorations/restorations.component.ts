@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageEntity } from '../../entities/ImageEntity';
-import { ImageService } from '../../services/image.service';
+import { ImageEntity } from '../../../entities/ImageEntity';
+import { ImageService } from '../../../services/image.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-restorations',
@@ -13,9 +14,10 @@ export class RestorationsComponent implements OnInit {
   path = 'restorations';
   files = 11;
 
-  constructor(private imageService: ImageService) { }
+  constructor(private imageService: ImageService, private titleService: Title) { }
 
   ngOnInit() {
+    this.titleService.setTitle('Restorations');
     this.images = this.imageService.loadImagesFromAssets(this.path, this.files);
   }
 

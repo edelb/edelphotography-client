@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { PortfolioEntity } from '../../entities/PortfolioEntity';
+import { PortfolioEntity } from '../../../entities/PortfolioEntity';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ImageService } from '../../services/image.service';
+import { ImageService } from '../../../services/image.service';
 import * as $ from 'jquery';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-portfolio',
@@ -20,12 +21,14 @@ export class PortfolioComponent implements OnInit {
   (
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private imageService: ImageService
+    private imageService: ImageService,
+    private titleService: Title
   ) {
     this.portfolios = this.imageService.getPortfolios();
   }
 
   ngOnInit() {
+    this.titleService.setTitle('Portfolio');
     $(document).ready(function() {
       const body = $('html, nav');
       $('#home section').click(function() {

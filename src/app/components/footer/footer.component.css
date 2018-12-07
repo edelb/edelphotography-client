@@ -16,15 +16,15 @@ footer {
 }
 
 footer a {
-    color: #00b87d;
+    color: #05a170;
     text-decoration: none;
     font-weight: bold;
-    border-bottom: 1px solid rgb(42, 42, 42);
+    /* border-bottom: 1px solid rgb(42, 42, 42); */
 }
 
 footer a:hover {
-    color: #28daa1;
-    border-bottom: 1px solid #00b87d;
+    color: #08bb82;
+    border-bottom: 2px solid #05a170;
 }
 
 footer .credit {

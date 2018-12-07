@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  year = new Date().getFullYear();
+
   constructor() { }
 
   ngOnInit() {
+    $('footer a').click(function() {
+      $('html, nav').animate({scrollTop: 0}, 500, 'swing');
+    });
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageEntity } from '../../entities/ImageEntity';
-import { ImageService } from '../../services/image.service';
+import { ImageEntity } from '../../../entities/ImageEntity';
+import { ImageService } from '../../../services/image.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-montages',
@@ -13,9 +14,10 @@ export class MontagesComponent implements OnInit {
   path = 'montages';
   files = 8;
 
-  constructor(private imageService: ImageService) { }
+  constructor(private imageService: ImageService, private titleService: Title) { }
 
   ngOnInit() {
+    this.titleService.setTitle('Montages');
     this.images = this.imageService.loadImagesFromAssets(this.path, this.files);
   }
 

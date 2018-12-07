@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageService } from '../../services/image.service';
-import { FlickrService } from '../../services/flickr.service';
-import { PhotosetEntity } from '../../entities/PhotosetEntity';
-import { SizeEntity } from '../../entities/SizeEntity';
+import { ImageService } from '../../../services/image.service';
+import { FlickrService } from '../../../services/flickr.service';
+import { PhotosetEntity } from '../../../entities/PhotosetEntity';
+import { SizeEntity } from '../../../entities/SizeEntity';
 import * as $ from 'jquery';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -14,9 +15,10 @@ export class HomeComponent implements OnInit {
 
   photoset: PhotosetEntity;
 
-  constructor(private imageService: ImageService, private flickrService: FlickrService) { }
+  constructor(private imageService: ImageService, private flickrService: FlickrService, private titleService: Title) { }
 
   ngOnInit() {
+    this.titleService.setTitle('Home');
     this.loadImages();
     $('#home section').click(function() {
       const body = $('html, nav');

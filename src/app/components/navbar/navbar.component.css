@@ -41,12 +41,10 @@
 }
 
 .login {
-    display: block;
     text-align: right;
 }
 
 .logout {
-    display: none;
     text-align: right;
 }
 

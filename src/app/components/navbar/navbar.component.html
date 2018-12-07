@@ -72,7 +72,7 @@
         </a>
       </li>
 
-      <li class="nav-item login">
+      <li class="nav-item login" (click)="auth.login()" *ngIf="!auth.isAuthenticated()">
           <a class="nav-link waves-effect waves-light">
             <span class="menu-icon">
                 <i class="fas fa-sign-in-alt"></i>
@@ -83,7 +83,7 @@
           </a>
       </li>
 
-      <li class="nav-item logout">
+      <li class="nav-item logout" (click)="auth.logout()" *ngIf="auth.isAuthenticated()">
           <a class="nav-link waves-effect waves-light">
             <span class="menu-icon">
                 <i class="fas fa-sign-in-alt"></i>
@@ -97,3 +97,4 @@
   </div>
   
 </nav>
+<app-login></app-login>
