@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.titleService.setTitle('Home');
-    this.loadImages();
+    // this.loadImages();
     $('#home section').click(function() {
       const body = $('html, nav');
       body.animate({scrollTop: 0}, 500, 'swing'); // animate scrollTop
