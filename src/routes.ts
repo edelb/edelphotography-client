@@ -5,7 +5,6 @@ import { ContactComponent } from './app/components/routes/contact/contact.compon
 import { MontagesComponent } from './app/components/routes/montages/montages.component';
 import { RestorationsComponent } from './app/components/routes/restorations/restorations.component';
 import { PortfolioViewComponent } from './app/components/portfolio-view/portfolio-view.component';
-import { CallbackComponent } from './app/components/callback/callback.component';
 import { PrivacyPolicyComponent } from './app/components/info/privacy-policy/privacy-policy.component';
 import { TermsComponent } from './app/components/info/terms/terms.component';
 
@@ -40,11 +39,6 @@ export const appRoutes: Routes = [
   {
     path: 'portfolio/view',
     component: PortfolioViewComponent
-  },
-
-  {
-    path: 'callback',
-    component: CallbackComponent
   },
 
   {

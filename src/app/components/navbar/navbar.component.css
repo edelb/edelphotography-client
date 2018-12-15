@@ -15,11 +15,6 @@
     padding: 16px 12px;
 }
 
-.navbar-nav li {
-    padding-left: 2px;
-    padding-right: 2px;
-}
-
 .navbar a:hover {
     border-bottom: 2px solid white;
     transition-timing-function: ease-in;
@@ -32,20 +27,17 @@
     background: rgba(255, 255, 255, 0.2);
 }
 
+.navbar-nav li {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
 .navbar-brand {
     font-family: 'Mali', cursive;
 }
 
 .navbar-brand img {
     width: 50px;
-}
-
-.login {
-    text-align: right;
-}
-
-.logout {
-    text-align: right;
 }
 
 /* animation and padding for scrolling navbar */
@@ -73,11 +65,72 @@
     cursor: pointer;
 }
 
+/* Dropdown */
+.nav-dropdown .nav-link {
+    padding: 0px;
+    padding-right: 10px;
+    margin-top: 4px;
+}
+
+.nav-dropdown a:hover {
+    border-bottom: 2px solid rgba(209, 172, 172, 0);
+    background: rgba(255, 255, 255, 0);
+}
+
+.nav-dropdown img {
+    max-height: 50px;
+    border-radius: 50%;
+    -webkit-box-shadow: 10px 10px 15px -10px rgba(0,0,0,0.5);
+    -moz-box-shadow: 10px 10px 15px -10px rgba(0,0,0,0.5);
+    box-shadow: 10px 10px 15px -10px rgba(0,0,0,0.5);
+}
+
+.nav-dropdown img:hover {
+    -webkit-box-shadow: 10px 10px 15px -10px rgba(0,0,0,0.8);
+    -moz-box-shadow: 10px 10px 15px -10px rgba(0,0,0,0.8);
+    box-shadow: 10px 10px 15px -10px rgba(0,0,0,0.8);
+}
+
+.dropdown-menu {
+    background-color: #f9f9f9;
+}
+
+.dropdown-menu a {
+    color: #333;
+}
+
+.dropdown-menu a:hover {
+    color: white;
+    background: #72cac1;
+}
+
+.dropdown-menu a span:nth-child(1) {
+    color: #72cac1;
+}
+
+.dropdown-menu a:hover span:nth-child(1) {
+    color: white;
+}
+
+.user-menu-small {
+    display: none;
+}
+
+.menu-icon {
+    padding-right: 5px;
+}
+
+/* End Dropdown */
+
 /* Hamburger Menu */
-.bars-container {
-    max-width: 43px;
+.menu-container {
+    /* max-width: 43px; */
     cursor: pointer;
-    margin-right: 5px;
+    display: none;
+}
+
+#hamburger {
+    padding-right: 15px;
 }
 
 .bar1, .bar2, .bar3 {
@@ -102,6 +155,10 @@
 /* End Hamburger Menu */
 
 @media (max-width: 991px) {
+    .menu-container {
+        display: block;
+    }
+
     .navbar-brand {
         padding: 16px 12px;
     }
@@ -109,6 +166,7 @@
     .navbar a {
         padding: 8px 6px;
         padding-left: 15px;
+        padding-right: 15px;
     }
 
     .navbar-nav li {
@@ -124,8 +182,8 @@
         box-shadow: inset 0px 55px 20px -50px rgba(0,0,0,0.3);
     }
 
-    .menu-icon i {
-        width: 25px;
+    .menu-icon {
+        /* padding-right: 7px; */
     }
 
     /* animation and padding for scrolling navbar */
@@ -135,5 +193,17 @@
 
     .navbar.scrolling-navbar.top-nav-collapse {
         padding: 0;
+    }
+
+    .user-menu-big {
+        display: none;
+    }
+
+    .user-menu-small {
+        display: block;
+    }
+
+    .text-align-right {
+        text-align: right;
     }
 }

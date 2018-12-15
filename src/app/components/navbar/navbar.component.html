@@ -1,100 +1,107 @@
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color fixed-top scrolling-navbar">
-
-  <div class="navbar-brand unselectable" routerLink="/">
-    <!-- <span class="icon"><img src="../../../favicon.png"></span> -->
+  <div class="navbar-brand unselectable" routerLink="/" (click)="clickHamburgerScroll()">
     EDEL PHOTOGRAPHY
   </div>
 
-  <span class="bars-container">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-      <div id="hamburger" data-toggle="collapse">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </div>
-    </button>
+  <span class="menu-container" *ngIf="!auth.isAuthenticated()" (click)="clickHamburger()">
+    <div id="hamburger">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+  </span>
+
+  <span class="menu-container" *ngIf="auth.isAuthenticated()" (click)="clickHamburger()">
+    <span class="user-menu-small nav-dropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link dropdown-toggle unselectable" id="accountDropdown" onContextMenu="return false;">
+            <img src="{{ profile.picture }}">
+          </a>
+        </li>
+      </ul>
+    </span>
   </span>
 
   <div class="collapse navbar-collapse justify-content-end" id="navbar-content">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link waves-effect waves-light" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          <span class="menu-icon">
-            <i class="fas fa-home"></i>
-          </span>
-          <span class="menu-text">
-            Home
-          </span>          
+          <span class="menu-icon"><i class="fas fa-home"></i></span>
+          <span class="menu-text">Home</span>          
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link waves-effect waves-light" routerLink="portfolio" routerLinkActive="active">
-          <span class="menu-icon">
-            <i class="fas fa-camera-retro"></i>
-          </span>
-          <span class="menu-text">
-            Portfolio
-          </span>
+          <span class="menu-icon"><i class="fas fa-camera-retro"></i></span>
+          <span class="menu-text">Portfolio</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link waves-effect waves-light" routerLink="montages" routerLinkActive="active">
-          <span class="menu-icon">
-            <i class="far fa-images"></i>
-          </span>
-          <span class="menu-text">
-            Montages
-          </span>
+          <span class="menu-icon"><i class="far fa-images"></i></span>
+          <span class="menu-text">Montages</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link waves-effect waves-light" routerLink="restorations" routerLinkActive="active">
-          <span class="menu-icon">
-            <i class="fab fa-firstdraft"></i>
-          </span>
-          <span class="menu-text">
-            Restorations
-          </span>
+          <span class="menu-icon"><i class="fab fa-firstdraft"></i></span>
+          <span class="menu-text">Restorations</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link waves-effect waves-light" routerLink="contact" routerLinkActive="active">
-          <span class="menu-icon">
-            <i class="fas fa-envelope"></i>
-          </span>
-          <span class="menu-text">
-            Contact
-          </span>
+          <span class="menu-icon"><i class="fas fa-envelope"></i></span>
+          <span class="menu-text">Contact</span>
         </a>
       </li>
 
-      <li class="nav-item login" (click)="auth.login()" *ngIf="!auth.isAuthenticated()">
+      <li class="nav-item text-align-right login" (click)="auth.login()" *ngIf="!auth.isAuthenticated()">
           <a class="nav-link waves-effect waves-light">
-            <span class="menu-icon">
-                <i class="fas fa-sign-in-alt"></i>
-            </span>
-            <span class="menu-text">
-              Log In
-            </span>
+            <span class="menu-icon"><i class="fas fa-sign-in-alt"></i></span>
+            <span class="menu-text">Log In</span>
           </a>
       </li>
 
-      <li class="nav-item logout" (click)="auth.logout()" *ngIf="auth.isAuthenticated()">
-          <a class="nav-link waves-effect waves-light">
-            <span class="menu-icon">
-                <i class="fas fa-sign-in-alt"></i>
-            </span>
-            <span class="menu-text">
-              Log Out
-            </span>
+      <span class="user-menu-small text-align-right" *ngIf="auth.isAuthenticated()">
+        <li class="nav-item">
+          <a class="nav-link waves-effect waves-light" routerLinkActive="active">
+            <span class="menu-icon"><i class="fas fa-user-circle"></i></span>
+            <span class="menu-text">Account</span>
           </a>
-      </li>
+        </li>
+  
+        <li class="nav-item logout" (click)="auth.logout()">
+          <a class="nav-link waves-effect waves-light" routerLinkActive="active">
+            <span class="menu-icon"><i class="fas fa-sign-in-alt"></i></span>
+            <span class="menu-text">Log Out</span>
+          </a>
+        </li>
+      </span>
     </ul>
   </div>
-  
+
+  <span class="user-menu-big nav-dropdown" *ngIf="auth.isAuthenticated()">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link dropdown-toggle unselectable" id="accountDropdown" data-toggle="dropdown" onContextMenu="return false;">
+          <img src="{{ profile.picture }}">
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-secondary">
+          <a class="dropdown-item waves-effect waves-light">
+            <span class="menu-icon"><i class="fas fa-user-circle"></i></span>
+            <span class="menu-text">Account</span>
+          </a>
+          <a class="dropdown-item waves-effect waves-light" (click)="auth.logout()">
+            <span class="menu-icon"><i class="fas fa-sign-in-alt"></i></span>
+            <span class="menu-text">Log Out</span>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </span>
 </nav>
-<app-login></app-login>

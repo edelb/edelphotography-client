@@ -84,8 +84,8 @@ body {
 	to {transform: scale(1)}
 }
 
-@media(max-width: 768px) {
+@media(max-width: 991px) {
     body {
-        padding-top: 80px;
+        padding-top: 90px;
     }
 }

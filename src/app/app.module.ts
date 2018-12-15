@@ -22,7 +22,6 @@ import { ImageService } from './services/image.service';
 import { UserService } from './services/user.service';
 import { FlickrService } from './services/flickr.service';
 import { AuthService } from './services/auth.service';
-import { CallbackComponent } from './components/callback/callback.component';
 import { EllipsisComponent } from './components/loaders/ellipsis/ellipsis.component';
 import { PrivacyPolicyComponent } from './components/info/privacy-policy/privacy-policy.component';
 import { TermsComponent } from './components/info/terms/terms.component';
@@ -40,7 +39,6 @@ import { TermsComponent } from './components/info/terms/terms.component';
     RestorationsComponent,
     PortfolioViewComponent,
     LoginComponent,
-    CallbackComponent,
     EllipsisComponent,
     PrivacyPolicyComponent,
     TermsComponent

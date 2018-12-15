@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-privacy-policy',
@@ -11,14 +12,15 @@ export class PrivacyPolicyComponent implements OnInit {
     name: 'Edel Photography',
     email: 'EdelDevSolutions@gmail.com',
     emailLink: 'mailto:EdelDevSolutions@gmail.com',
-    website: 'http://18.220.214.160:8080',
-    websiteContact : 'http://18.220.214.160:8080/contact',
-    websiteTerms: 'http://18.220.214.160:8080/terms'
+    website: 'https://edelphotography.com',
+    websiteContact : 'https://edelphotography.com/contact',
+    websiteTerms: 'https://edelphotography.com/terms'
   };
 
-  constructor() { }
+  constructor(private titleService: Title) { }
 
   ngOnInit() {
+    this.titleService.setTitle('Privacy Policy');
   }
 
 }

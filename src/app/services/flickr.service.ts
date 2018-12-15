@@ -26,7 +26,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { endpoints } from '../../environments/environment';
+import { environment } from '../../environments/environment';
 import { PhotosetEntity } from '../entities/PhotosetEntity';
 import { PhotoEntity } from '../entities/PhotoEntity';
 import { SizeEntity } from '../entities/SizeEntity';
@@ -43,7 +43,7 @@ export class FlickrService {
      * @param album Album of images to retrieve (i.e. portfolio-day1)
      */
     getImagesFromAlbum(album: string): Observable<PhotosetEntity> {
-        return this.http.get<PhotosetEntity>(endpoints.flickr + `images/album/${album}`);
+        return this.http.get<PhotosetEntity>(environment.endpoints.flickr + `images/album/${album}`);
     }
 
     /**
@@ -51,7 +51,7 @@ export class FlickrService {
      * @param album Album of images to retrieve (i.e. portfolio-day1)
      */
     getImageFromAlbumByIdOrTitle(albumIdOrTitle: string, photoIdOrTitle: string): Observable<PhotoEntity> {
-        return this.http.get<PhotoEntity>(endpoints.flickr + `images/album/${albumIdOrTitle}/photos/${photoIdOrTitle}`);
+        return this.http.get<PhotoEntity>(environment.endpoints.flickr + `images/album/${albumIdOrTitle}/photos/${photoIdOrTitle}`);
     }
 
     /**
@@ -59,7 +59,7 @@ export class FlickrService {
      * @param authName name of authorization (i.e. edel-read)
      */
     authorize(authName: string): Observable<boolean> {
-        return this.http.post<boolean>(endpoints.flickr + `auth/${authName}`, { });
+        return this.http.post<boolean>(environment.endpoints.flickr + `auth/${authName}`, { });
     }
 
     /**
@@ -67,7 +67,7 @@ export class FlickrService {
      * @param photoId ID of photo
      */
     getSizesOfImage(photoId: string): Observable<Array<SizeEntity>> {
-        return this.http.get<Array<SizeEntity>>(endpoints.flickr + `image/sizes/${photoId}`);
+        return this.http.get<Array<SizeEntity>>(environment.endpoints.flickr + `image/sizes/${photoId}`);
     }
 
     /**
