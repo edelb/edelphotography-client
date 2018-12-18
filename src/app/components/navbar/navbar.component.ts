@@ -71,7 +71,7 @@ export class NavbarComponent implements OnInit {
             $('#navbar-content').slideToggle(300);
             $('html, nav').animate({scrollTop: 0}, 500, 'swing');
           } else {  // screen bigger than winWidth
-            $('#navbar-content').slideToggle(300);
+            // $('#navbar-content').slideToggle(300);
             $('html, nav').animate({scrollTop: 0}, 500, 'swing');
           }
         });
